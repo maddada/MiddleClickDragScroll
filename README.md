@@ -14,7 +14,7 @@ nothing to install. The exe isn't code-signed, so SmartScreen may warn the first
 
 | You do | What happens |
 |---|---|
-| Hold middle button and drag | Content follows your hand (natural direction by default) |
+| Hold middle button and drag | Content follows your hand (natural direction by default); the pointer stays put unless you turn off "Freeze cursor while scrolling" |
 | Release while moving (flick) | Content glides and slows down smoothly |
 | Stop, then release | Stops dead, no glide |
 | Click / real wheel during a glide | Glide stops |
@@ -125,8 +125,9 @@ a `FrameClock` and a `SystemServices`. Everything in `shared/` and `ui/` is reus
   wheel messages, so they get normal wheel input while the pointer is over them, and
   scrolling pauses while it's elsewhere. Apps that hit-test the live cursor instead of the
   message position (e.g. WPF) scroll whatever is under the pointer.
-- "Stop glide on pointer move" defaults to "never", as on a trackpad. Set a distance to have
-  moving the mouse stop the glide.
+- "Stop glide on pointer move" defaults to 250 px: moving the mouse that far after a flick stops
+  the glide. Drag it all the way right ("never") to keep gliding wherever the pointer goes, as
+  on a trackpad.
 
 ## See also
 

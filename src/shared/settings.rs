@@ -56,7 +56,7 @@ impl Default for Settings {
             enabled: true,
             natural_direction: true,
             axis_lock: true,
-            freeze_cursor: false,
+            freeze_cursor: true,
             latch_target: true,
 
             speed: 1.0,
@@ -74,7 +74,7 @@ impl Default for Settings {
             tail_brake: 250.0,
             stop_speed: 15.0,
             max_speed: 12000.0,
-            glide_cancel_distance: GLIDE_CANCEL_NEVER,
+            glide_cancel_distance: 250.0,
 
             excluded_apps: Vec::new(),
 

@@ -556,10 +556,10 @@ mod tests {
     }
 
     #[test]
-    fn by_default_the_glide_ignores_pointer_movement() {
+    fn set_to_never_the_glide_ignores_pointer_movement() {
         let pointer = MovingPointer(Arc::new(Mutex::new(Vec2::ZERO)));
         let mut e = Engine::new(Box::new(pointer.clone()), Box::new(NoClock));
-        let s = Settings::default();
+        let s = Settings { glide_cancel_distance: GLIDE_CANCEL_NEVER, ..Settings::default() };
         let t = drag_up(&mut e, &s, Instant::now(), 3000.0, 80);
         e.handle(Command::Release { at: t }, &s);
 

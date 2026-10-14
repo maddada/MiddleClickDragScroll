@@ -138,7 +138,8 @@ mod tests {
     fn small_wiggle_is_a_click() {
         let inputs = [Input::TriggerDown { excluded: false }, Input::Motion { dx: 2.0, dy: 1.0 }, Input::TriggerUp];
 
-        let (v, c) = run(&mut Gesture::new(), &Settings::default(), &inputs);
+        let moving = Settings { freeze_cursor: false, ..Settings::default() };
+        let (v, c) = run(&mut Gesture::new(), &moving, &inputs);
         assert_eq!(v, [Verdict::Swallow, Verdict::Pass, Verdict::Swallow]);
         assert!(matches!(c.as_slice(), [Command::Touch { .. }, Command::Click]));
 
