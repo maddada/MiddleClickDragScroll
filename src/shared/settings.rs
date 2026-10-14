@@ -434,11 +434,13 @@ mod tests {
 
     #[test]
     fn round_trips_through_text() {
-        let mut s = Settings::default();
-        s.speed = 1.75;
-        s.natural_direction = false;
-        s.excluded_apps = vec!["blender.exe".into(), "game.exe".into()];
-        s.run_as_admin = true;
+        let s = Settings {
+            speed: 1.75,
+            natural_direction: false,
+            excluded_apps: vec!["blender.exe".into(), "game.exe".into()],
+            run_as_admin: true,
+            ..Settings::default()
+        };
         assert_eq!(from_text(&to_text(&s, true)), s);
     }
 
