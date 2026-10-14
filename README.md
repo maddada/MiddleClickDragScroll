@@ -133,5 +133,7 @@ a `FrameClock` and a `SystemServices`. Everything in `shared/` and `ui/` is reus
 
 - [AltMirroredResize](https://github.com/maddada/AltMirroredResize): hold Alt and drag a window
   edge to resize it from both sides at once, like Option-resizing on macOS.
+- [TopScrollBrightness](https://github.com/maddada/TopScrollBrightness): scroll with the pointer at
+  the top edge of a screen to change that monitor's brightness.
 - [Ghostex](https://ghostex.dev) ([GitHub](https://github.com/maddada/Ghostex)): a native
   workspace for coding agents, built in Rust with GPUI.
